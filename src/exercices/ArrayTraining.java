@@ -1,3 +1,4 @@
+
 public class ArrayTraining {
 
     /**
@@ -5,8 +6,9 @@ public class ArrayTraining {
      * @return an empty int array of size n, eg: {0, 0, 0}
      */
     public int[] emptyIntArray(int n) {
-
-        return null;
+    	int[] emptyInt = new int[n];
+    	
+        return emptyInt;
     }
 
     /**
@@ -14,8 +16,9 @@ public class ArrayTraining {
      * @return an empty String array of size n, eg: {null, null}
      */
     public String[] emptyStringArray(int n) {
-
-        return null;
+    	String[] emptyStr = new String[n];
+    	
+        return emptyStr;
     }
 
     /**
@@ -26,7 +29,9 @@ public class ArrayTraining {
      */
     public int[] intArray(int a, int b, int c) {
 
-        return null;
+    	int[] tabInt = {a, b, c};
+    	
+        return tabInt;
     }
 
     /**
@@ -37,8 +42,9 @@ public class ArrayTraining {
      * eg: {"test", sample", "value"}
      */
     public String[] stringArray(String a, String b, String c) {
-
-        return null;
+        
+    	String[] tabStr = {a, b, c};
+        return tabStr;
     }
 
     /**
@@ -46,8 +52,8 @@ public class ArrayTraining {
      * @return length of the array, eg: 1
      */
     public int length(int[] array) {
-
-        return 0;
+        
+        return array.length;
     }
 
     /**
@@ -56,7 +62,7 @@ public class ArrayTraining {
      */
     public int firstValue(int[] array) {
 
-        return 0;
+        return array[0];
     }
 
     /**
@@ -65,7 +71,7 @@ public class ArrayTraining {
      */
     public int lastValue(int[] array) {
 
-        return 0;
+        return array[array.length - 1];
     }
 
     /**
@@ -75,7 +81,7 @@ public class ArrayTraining {
      */
     public int valueAtPosition(int[] array, int position) {
 
-        return 0;
+        return array[position];
     }
 
     /**
@@ -85,8 +91,9 @@ public class ArrayTraining {
      * @return the array with the value replaced at position, eg: {3, 4, 5}
      */
     public int[] replace(int[] array, int value, int position) {
-
-        return null;
+        
+    	array[position] = value;
+        return array;
     }
 
     /**
@@ -94,10 +101,16 @@ public class ArrayTraining {
      * @return sum of values of the array, eg: 6
      */
     public int sum(int[] array) {
-
-        return 0;
+        
+    	int sum = 0;
+    	for(int i = 0; i < array.length; i++) {
+    	   sum = sum + array[i];
+    	}
+    		
+        return sum;
     }
 
+    
     /**
      * @param array,  eg: {1, 2, 3}
      * @param search, eg: 2
@@ -105,7 +118,14 @@ public class ArrayTraining {
      */
     public boolean contains(int[] array, int search) {
 
-        return false;
+    	boolean searchInt = false;
+    	for(int i = 0; i < array.length; i++) {
+    	   if (array[i] == search) {
+    		   searchInt = true;
+    	   }
+    	}
+    	
+        return searchInt;
     }
 
     /**
@@ -113,8 +133,16 @@ public class ArrayTraining {
      * @return array where all words are capitalized, eg: {"Sample", "Value"}
      */
     public String[] capitalize(String[] array) {
-
-        return null;
+        
+    	String[] capStrings = array;
+    	
+    	for(int i = 0; i < array.length; i++) {
+    	   String temp =  array[i];
+    	   temp =  temp.substring(0, 1).toUpperCase() + temp.substring(1);
+    	   capStrings[i] = temp;
+     	}
+    	
+        return capStrings;
     }
 
     /**
@@ -125,16 +153,30 @@ public class ArrayTraining {
      */
     public boolean equals(int[] first, int[] second) {
 
-        return false;
+    	boolean searchTabEq = true;
+    	for(int i = 0; i < first.length; i++) {
+    	   if (first[i] != second[i]) {
+    		   searchTabEq = false;
+    	   }
+    	}   	    	
+        return searchTabEq;
     }
 
+       
     /**
      * @param array, eg: {1, 2, 3}
      * @return array with reversed values, eg: {3, 2, 1}
      */
     public int[] reverse(int[] array) {
 
-        return null;
+    	int[] tabReverse = new int[array.length];
+    	int  lengthArray = array.length - 1;
+    	
+    	for(int i = 0; i < array.length; i++) {
+    		tabReverse[lengthArray - i] = array[i];
+     	}   	    	
+    	
+        return tabReverse;
     }
 
     /**
@@ -144,7 +186,26 @@ public class ArrayTraining {
      * eg: {1, 2, 3, 4, 5}
      */
     public int[] concat(int[] first, int[] second) {
-
-        return null;
+    	int lengthFirstSecond = first.length + second.length;
+    	int[] concatTabs = new int[lengthFirstSecond];
+    	
+    	System.out.println(concatTabs.length);
+    	
+    	
+    	for(int i = 0; i < first.length; i++) {
+    		concatTabs[i] = first[i];
+     	}   	    	
+    	
+    	for(int j = 0; j < second.length; j++) {
+    		concatTabs[first.length  + j] = second[j];
+     	}   	    	
+    
+        return concatTabs;
     }
+    
 }
+
+
+
+
+

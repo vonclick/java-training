@@ -4,11 +4,13 @@ public class MatrixTraining {
      * @param lines   height of the matrix, eg: 3
      * @param columns width of the matrix, eg: 2
      * @return an empty int matrix of lines and columns size,
-     * eg: {{0, 0}, {0, 0}, {0, 0}}
+     * eg: {{0, 0}, {0, 0}, {0, 0}}   
      */
     public int[][] emptyIntMatrix(int lines, int columns) {
-
-        return null;
+        
+    	int[][] emptyTab = new int[lines][columns]; 
+    	    	
+        return emptyTab;
     }
 
     /**
@@ -18,8 +20,10 @@ public class MatrixTraining {
      * eg: {{null, null, null}, {null, null, null}}
      */
     public String[][] emptyStringMatrix(int lines, int columns) {
-
-        return null;
+        
+    	String[][] emptyTab = new String[lines][columns];
+    	    	
+        return emptyTab;
     }
 
     /**
@@ -30,7 +34,12 @@ public class MatrixTraining {
      */
     public int[][] intMatrix(int[] a, int[] b, int[] c) {
 
-        return null;
+        int[][] abc = new int[][] {
+    	      a,
+    	      b,
+    	      c
+    	    };
+        return abc;
     }
 
     /**
@@ -41,7 +50,12 @@ public class MatrixTraining {
      */
     public String[][] stringMatrix(String[] a, String[] b, String[] c) {
 
-        return null;
+    	String[][] abc = new String[][] {
+  	      a,
+  	      b,
+  	      c
+  	    };
+      return abc;
     }
 
     /**
@@ -50,7 +64,7 @@ public class MatrixTraining {
      */
     public int height(int[][] matrix) {
 
-        return 0;
+        return matrix.length;
     }
 
     /**
@@ -59,7 +73,7 @@ public class MatrixTraining {
      */
     public int width(int[][] matrix) {
 
-        return 0;
+        return matrix[0].length;
     }
 
     /**
@@ -70,7 +84,7 @@ public class MatrixTraining {
      */
     public int valueAtPosition(int[][] matrix, int line, int column) {
 
-        return 0;
+        return matrix[line][column];
     }
 
     /**
@@ -82,8 +96,10 @@ public class MatrixTraining {
      * eg: {{1, 2, 3}, {4, 5, 6}}
      */
     public int[][] replace(int[][] matrix, int value, int line, int column) {
-
-        return null;
+    	
+    	matrix[line][column] = value;
+    	
+        return matrix;
     }
 
     /**
@@ -91,8 +107,14 @@ public class MatrixTraining {
      * @return sum of matrix values, eg: 21
      */
     public int sum(int[][] matrix) {
-
-        return 0;
+         
+    	int sumMatrix = 0;
+    	for(int i = 0; i < matrix.length; i++) {
+    	   for(int j = 0; j < matrix[0].length; j++) {
+    		   sumMatrix = sumMatrix + matrix[i][j];
+     	   }   	    	    	
+    	}  	
+        return sumMatrix;
     }
 
     /**
@@ -102,7 +124,16 @@ public class MatrixTraining {
      */
     public boolean contains(int[][] matrix, int search) {
 
-        return false;
+    	boolean searchInt = false;
+    	for(int i = 0; i < matrix.length; i++) {
+     	   for(int j = 0; j < matrix[0].length; j++) {
+    	      if (matrix[i][j] == search) {
+    		      searchInt = true;
+    	      }
+    	   }
+ 	    }   	
+    	
+        return searchInt;
     }
 
     /**
@@ -111,7 +142,16 @@ public class MatrixTraining {
      */
     public int countEvens(int[][] matrix) {
 
-        return 0;
+    	int numberEvens = 0;
+    	for(int i = 0; i < matrix.length; i++) {
+     	   for(int j = 0; j < matrix[0].length; j++) {
+    	      if ((matrix[i][j] % 2) == 0) {
+    	    	  numberEvens = numberEvens + 1;
+    	      }
+    	   }
+ 	    }   	
+    	
+        return numberEvens;
     }
 
     /**
@@ -121,6 +161,26 @@ public class MatrixTraining {
      */
     public int occurrences(char[][] matrix, char search) {
 
-        return 0;
+    	
+    	int numberSearchChar = 0;
+    	for(int i = 0; i < matrix.length; i++) {
+     	   for(int j = 0; j < matrix[0].length; j++) {
+    	      if (matrix[i][j] == search) {
+    	    	  numberSearchChar = numberSearchChar + 1;
+    	      }
+    	   }
+ 	    }   	
+    	
+        return numberSearchChar;
     }
+    
+    
+/*    public static void main(String[] arg) {
+    	int[] a= {1,2,3};
+    	int[] b = {4,5,6,7};
+    	int[] tab = concat(a,b);
+    	for (int t : tab)
+    		System.out.println(t);
+    }    
+*/    
 }
